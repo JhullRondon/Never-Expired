@@ -4,40 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Sign In - %APPNAME%</title>
+  <title>Never Expired - Welcome!</title>
   <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
   <link href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../src/css/indexStyle.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
+  <div class="navbar-box">
+    <div class="logo"><img src="../src/images/logo.png" alt="logo" height="45"></div>
+    <nav id="navbar">
+      <ul>
+        <li><a class="navlink"><ion-icon name="home"></ion-icon>INICIO</a></li>
+        <li><a class="navlink"><ion-icon name="search"></ion-icon>BUSCAR</a></li>
+        <li><a class="navlink"><ion-icon name="attach"></ion-icon>ULTIMO AGREGADO</a></li>
+        <li><a class="navlink"><ion-icon name="alarm"></ion-icon>POR VENCER</a></li>
+        <li><a class="navlink"><ion-icon name="apps"></ion-icon>STATUS</a></li>
+        <li><a class="navlink"><ion-icon name="people"></ion-icon>USUARIOS</a></li>
+        <li><a class="navlink"><ion-icon name="log-out"></ion-icon>CERRAR SESION</a></li>
+      </ul>
+    </nav>
+    <div class="menu-toggle"><ion-icon name="menu"></ion-icon></div>
+  </div>
+  
   <main class="context-box">
-    <div class="navbar-box">
-      <div class="logo"><img src="../src/images/logo.png" alt="logo" height="45"></div>
-      <nav id="navbar">
-        <ul>
-          <li><a class="navlink"><ion-icon name="home"></ion-icon>INICIO</a></li>
-          <li><a class="navlink"><ion-icon name="search"></ion-icon>BUSCAR</a></li>
-          <li><a class="navlink"><ion-icon name="attach"></ion-icon>ULTIMO AGREGADO</a></li>
-          <li><a class="navlink"><ion-icon name="alarm"></ion-icon>POR VENCER</a></li>
-          <li><a class="navlink"><ion-icon name="apps"></ion-icon>CATEGORIAS</a></li>
-          <li><a class="navlink"><ion-icon name="people"></ion-icon>USUARIOS</a></li>
-          <li><a class="navlink"><ion-icon name="log-out"></ion-icon>CERRAR SESION</a></li>
-        </ul>
-      </nav>
-      <div class="menu-toggle"><ion-icon name="menu"></ion-icon></div>
+    <div class="maincontainer">
+      <section class="gripitem addbutton">
+        <button type="button" class="add-button" id="add">Agregar</button>
+      </section>
+      <aside class="gripitem userbox">
+        <div class="usercontainer">
+          <img src="" alt="photo">
+          <div class="userinfo">
+            <label for="username" id="username">username</label>
+            <label for="occupation" id="occupation">puesto</label>
+          </div>
+        </div>
+      </aside>
+      <section class="gripitem toexpired">
+        <table>close to expired</table>
+      </section>
+      <section class="gripitem lastadded">
+        <table>last added</table>
+      </section>
+      <section class="gripitem pending">undermine</section>
     </div>
-
-
     <footer class="footer">
-
+        <section>
+          <h2>Contacto</h2>
+          <label>Diseñado y desarrolado por: <ion-icon name="logo-facebook"></ion-icon><a href="https://www.facebook.com/Tetsuryuuken" class="producer" target="_blank">Jhull Rondon</a></label>
+          <label for=""><ion-icon name="mail"></ion-icon> Email: <a href="mailto:rondonjhull@gmail.com%20Subject" target="_top">rondonjhull@gmail.com</a>
+  
+          </label>
+        </section>
     </footer>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.js"
       integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
       crossorigin="anonymous"></script>
-    <script src="../src/js/loginscript.js"></script>
+    <script src="../src/js/navbar.js"></script>
   </main>
+  
 </body>
 </html>

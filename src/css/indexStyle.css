@@ -9,13 +9,14 @@ body {
 
 /* NAV BAR */
 .navbar-box {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding: 0 50px;
   background-color: #303F9F;
   color: #FFF;
+  z-index: 1;
 }
 
 .logo {
@@ -64,16 +65,16 @@ nav ul li a.active {
 @media (max-width: 975px) {
   .navbar-box {
     padding: 0 20px;
+    z-index: 1;
   }
 
   .menu-toggle {
     display: block;
   }
   nav {
-    position: absolute;
+    position: fixed;
     top: 55px;
     width: 100%;
-    height: calc(100vh - 55px);
     background-color: #303F9F;
     color: #FFF;
     left: -100%;
@@ -94,3 +95,135 @@ nav ul li a.active {
   }
 }
 
+
+main {
+  height: calc(100vh - 60px);
+  display: grid;
+  position: relative;
+  grid-template-rows: 1fr 100px;
+  grid-template-areas: 
+  "."
+  "footer"
+  ;
+  top: 60px;
+  z-index: 0;
+}
+
+.maincontainer {
+  margin: 10px 30px;
+  height: calc(100vh - 160px);
+  display: grid;
+  grid-column-gap: 2%;
+  row-gap: 2%;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  grid-template-rows: 80px minmax(300px, 1fr) minmax(300px, 1fr);
+  grid-template-areas: 
+    "addbutton addbutton addbutton userbox"
+    "toexpired toexpired toexpired lastadded"
+    "toexpired toexpired toexpired undermine"
+    ;
+}
+.gripitem {
+  background-color: #BDBDBD;
+}
+main section.addbutton {
+  grid-area: addbutton;
+  align-self: flex-end;
+  justify-self: end;
+  background-color: #FFF;
+}
+
+main section button.add-button {
+  height: 40px;
+  width: 90px;
+  font-size: 16px;
+  font-weight: 700;
+  border: 1px solid #20202057;
+  border-radius: 4px;
+  background-color: #00BCD4;
+  color: #FFF;
+}
+main section button.add-button:hover {
+  background-color: #3F51B5;
+  border: none;
+}
+main section button.add-button:focus {
+  outline: none;
+}
+
+main section button.add-button:hover:active {
+  background-color: #303F9F;
+  transform: translateY(1px);
+}
+
+@media (max-width: 975px) {
+  main section button.add-button {
+    height: 62px;
+    width: 60px;
+    border-radius: 50%;
+    font-size: 30px;
+    font-weight: 100;
+    color: #FFF;
+    background: #00BCD4;
+    border: none;
+    box-shadow: 2px 2px 15px -3px rgba(8,4,33,1);
+  }
+}
+
+main aside.userbox {
+  grid-area: userbox;
+  align-self: self-start;
+  justify-self: end;
+  background-color: #FFF;
+}
+
+main aside div.usercontainer{
+  height: 80px;
+  width: 200px;
+  display: flex;
+}
+main aside div label {
+  display: block;
+  margin: 10px;
+}
+
+main section.toexpired {
+  grid-area: toexpired;
+}
+
+main section.lastadded {
+  grid-area: lastadded;
+}
+
+main section.undermine {
+  grid-area: undermine;
+}
+
+footer {
+  grid-area: footer;
+  box-shadow: 0px -5px 55px -14px rgba(0,0,0,0.75);
+  height: 100px;
+  background-color: #303F9F;
+  color: #fff;
+}
+
+footer section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+
+footer section h2 {
+  margin: 0;
+  padding: 10px 0;
+}
+
+footer section label a {
+  text-decoration: none;
+  color: #BDBDBD;
+}
+.producer {
+  color: rgb(153, 153, 106);
+  font-size: 16px;
+}
